@@ -1,0 +1,57 @@
+body {
+    font-family: "Mochiy Pop One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #fce4ec; /* Rosa pastello */
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h5 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+  }
+  
+  .ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .li {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .li p {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .add-task {
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff69b4;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff94c2;
+  }
