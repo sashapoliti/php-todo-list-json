@@ -3,60 +3,60 @@
         "id": 1,
         "title": "Mangiare tutto ci\u00f2 che mi capita davanti",
         "description": "Priorit\u00e0 assoluta! Devo assicurarmi di ingoiare ogni cosa che sembri deliziosa o utile durante il mio viaggio.",
-        "done": 0
+        "done": true
     },
     {
         "id": 2,
         "title": "Salvare Dream Land (ancora una volta)",
         "description": "Dream Land \u00e8 sempre in pericolo! Devo assicurarmi di sconfiggere tutti i cattivi e proteggere il mio amato mondo rosa.",
-        "done": 0
+        "done": true
     },
     {
         "id": 3,
         "title": "Allenarmi con i miei poteri copiati",
         "description": "Devo essere pronto a fronteggiare qualsiasi minaccia! Allenarmi e sperimentare con i poteri che ho assorbito \u00e8 fondamentale.",
-        "done": 0
+        "done": true
     },
     {
         "id": 4,
         "title": "Esplorare nuovi mondi e pianeti",
         "description": "Il viaggio \u00e8 la parte migliore dell'avventura! Devo esplorare nuovi mondi, incontrare nuovi amici e affrontare nuove sfide.",
-        "done": 0
+        "done": false
     },
     {
         "id": 5,
         "title": "Fare una pausa per un picnic",
         "description": "Anche il grande Kirby ha bisogno di riposo e cibo! Una pausa per un picnic con i miei amici \u00e8 sempre un'ottima idea.",
-        "done": 0
+        "done": false
     },
     {
         "id": 6,
         "title": "Aiutare gli amici in difficolt\u00e0",
         "description": "Nessuno \u00e8 mai solo quando Kirby \u00e8 in giro! Devo essere pronto ad aiutare i miei amici quando hanno bisogno di me.",
-        "done": 0
+        "done": false
     },
     {
         "id": 7,
         "title": "Diventare una stella dei giochi",
         "description": "Devo dimostrare al mondo intero le mie abilit\u00e0 nei giochi! Partecipare a tornei e vincere sfide \u00e8 un'ottima occasione per mostrare il mio valore.",
-        "done": 0
+        "done": false
     },
     {
         "id": 8,
         "title": "Fare amicizia con tutti gli abitanti di Dream Land",
         "description": "Gli amici sono la cosa pi\u00f9 importante! Devo fare del mio meglio per essere gentile e amichevole con tutti gli abitanti di Dream Land.",
-        "done": 0
+        "done": false
     },
     {
         "id": 9,
         "title": "Scoprire nuovi modi per utilizzare i miei poteri",
         "description": "I miei poteri non hanno limiti! Devo continuare a sperimentare e scoprire nuovi modi per utilizzarli al meglio.",
-        "done": 0
+        "done": false
     },
     {
         "id": 10,
         "title": "Mantenere sempre il mio sorriso",
         "description": "Anche quando le cose si fanno difficili, devo ricordare di sorridere! Il mio sorriso \u00e8 contagioso e pu\u00f2 illuminare la giornata di chiunque incontri.",
-        "done": 0
+        "done": false
     }
 ]

@@ -3,18 +3,24 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      toDo : [],
-      elTitle : '',
-      itemText : '',
-      done : ''
+      toDo: [],
+      elTitle: "",
+      itemText: "",
+      done: "",
     };
   },
   methods: {
     toggleDone(id) {
       /* console.log("Toggle done method called"); */
-      const index = this.toDo.findIndex((el) =>  el.id === id); //find index
+      /* const index = this.toDo.findIndex((el) =>  el.id === id); //find index
       
-      if (index !== -1) { this.toDo[index].done = !this.toDo[index].done; }; //control
+      if (index !== -1) { this.toDo[index].done = !this.toDo[index].done; }; //control */
+      const data = {
+        id: id,
+      };
+      axios.put("api.php", data).then((response) => {
+        this.toDo = response.data;
+      });
     },
     removeItem(id) {
       /* console.log("Remove method called"); */
@@ -23,7 +29,7 @@ createApp({
       if (index !== -1) { this.toDo.splice(index, 1); }; //control */
 
       const data = {
-        id : id
+        id: id,
       };
       axios.delete("api.php", { data }).then((response) => {
         this.toDo = response.data;
@@ -31,10 +37,10 @@ createApp({
     },
     addItem() {
       const newItem = {
-        id : null,
-        title : this.elTitle,
-        description : this.itemText,
-        done : 0
+        id: null,
+        title: this.elTitle,
+        description: this.itemText,
+        done: false,
       };
       const result = this.toDo.reduce((acc, element) => {
         return element.id > acc ? element.id : acc;
@@ -42,36 +48,36 @@ createApp({
       newItem.id = result + 1;
 
       const data = new FormData();
-      data.append('id', newItem.id);
-      data.append('title', newItem.title);
-      data.append('description', newItem.description);
-      data.append('done', newItem.done);
+      data.append("id", newItem.id);
+      data.append("title", newItem.title);
+      data.append("description", newItem.description);
+      data.append("done", newItem.done);
       axios.post("api.php", data).then((response) => {
         this.toDo = response.data;
-      })
-      this.elTitle = '';
-      this.itemText = '';
+      });
+      this.elTitle = "";
+      this.itemText = "";
     },
     getData() {
       axios.get("api.php").then((response) => {
         this.toDo = response.data;
-      })
-    }
+      });
+    },
   },
   computed: {
     filteredToDo() {
       return this.toDo.filter((element) => {
-        if (this.done === '') {
-          return true
-        } else if (parseInt(this.done) === 0) {
-          return element.done === 0
-        } else if (parseInt(this.done) === 1) {
-          return element.done === 1
+        if (this.done === "") {
+          return true;
+        } else if (this.done === "0") {
+          return element.done === true;
+        } else if (this.done === "1") {
+          return element.done === false;
         }
-      })
-    }
+      });
+    },
   },
   created() {
     this.getData();
-  }
+  },
 }).mount("#app");
