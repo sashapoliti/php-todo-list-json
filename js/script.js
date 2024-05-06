@@ -1,11 +1,9 @@
-import { toDo } from "./data.js";
-
 const { createApp } = Vue;
 
 createApp({
   data() {
     return {
-      toDo,
+      toDo : [],
       elTitle : '',
       itemText : '',
       done : ''
@@ -38,6 +36,11 @@ createApp({
       this.toDo.push(newItem);
       this.elTitle = '';
       this.itemText = '';
+    },
+    getData() {
+      axios.get("api.php").then((response) => {
+        this.toDo = response.data;
+      })
     }
   },
   computed: {
@@ -53,5 +56,7 @@ createApp({
       })
     }
   },
-  mounted() {},
+  created() {
+    this.getData();
+  }
 }).mount("#app");

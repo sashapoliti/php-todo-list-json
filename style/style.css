@@ -15,7 +15,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h5, .fa-trash-can {
+h1, h5, .fa-trash-can {
   color: #ff69b4;
 }
 h5, p, .fa-trash-can {
