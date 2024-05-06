@@ -12,16 +12,25 @@ if ($method === 'POST') {
             'id' => (int) $_POST['id'],
             'title' => $_POST['title'],
             'description' => $_POST['description'],
-            'done' => (bool) $_POST['done']
+            'done' => (int) $_POST['done']
         ];
         $list[] = $newToDo;
 
         $listJson = json_encode($list, JSON_PRETTY_PRINT);
         file_put_contents('list.json', $listJson);
     }
+} elseif ($method === 'DELETE') {
+    $list = json_decode($listJson, true);
+
+    $obj = json_decode(file_get_contents('php://input'), true);
+    foreach ($list as $index => $task) {
+        if ($task['id'] === $obj['id']) {
+            array_splice($list, $index, 1);
+        }
+    }
+    $listJson = json_encode($list, JSON_PRETTY_PRINT);
+    file_put_contents('list.json', $listJson);
 }
-
-
 
 header("Content-Type: application/json");
 echo $listJson;

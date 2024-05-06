@@ -18,16 +18,23 @@ createApp({
     },
     removeItem(id) {
       /* console.log("Remove method called"); */
-      const index = this.toDo.findIndex((el) =>  el.id === id); //find index
+      /* const index = this.toDo.findIndex((el) =>  el.id === id); //find index
 
-      if (index !== -1) { this.toDo.splice(index, 1); }; //control
+      if (index !== -1) { this.toDo.splice(index, 1); }; //control */
+
+      const data = {
+        id : id
+      };
+      axios.delete("api.php", { data }).then((response) => {
+        this.toDo = response.data;
+      });
     },
     addItem() {
       const newItem = {
         id : null,
         title : this.elTitle,
         description : this.itemText,
-        done : false
+        done : 0
       };
       const result = this.toDo.reduce((acc, element) => {
         return element.id > acc ? element.id : acc;
@@ -40,7 +47,7 @@ createApp({
       data.append('description', newItem.description);
       data.append('done', newItem.done);
       axios.post("api.php", data).then((response) => {
-        console.log(response.data);
+        this.toDo = response.data;
       })
       this.elTitle = '';
       this.itemText = '';
@@ -56,10 +63,10 @@ createApp({
       return this.toDo.filter((element) => {
         if (this.done === '') {
           return true
-        } else if (this.done === 'false') {
-          return element.done === false
-        } else if (this.done === 'true') {
-          return element.done === true
+        } else if (parseInt(this.done) === 0) {
+          return element.done === 0
+        } else if (parseInt(this.done) === 1) {
+          return element.done === 1
         }
       })
     }

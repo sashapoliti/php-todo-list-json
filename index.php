@@ -43,8 +43,8 @@
         <div>
           <select name="done" id="done" v-model="done">
             <option value="">tutto</option>
-            <option value="true">fatto</option>
-            <option value="false">da fare</option>
+            <option value="0">fatto</option>
+            <option value="1">da fare</option>
           </select>
         </div>
       </div>
