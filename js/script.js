@@ -33,7 +33,15 @@ createApp({
         return element.id > acc ? element.id : acc;
       }, 0); //reduce for max value
       newItem.id = result + 1;
-      this.toDo.push(newItem);
+
+      const data = new FormData();
+      data.append('id', newItem.id);
+      data.append('title', newItem.title);
+      data.append('description', newItem.description);
+      data.append('done', newItem.done);
+      axios.post("api.php", data).then((response) => {
+        console.log(response.data);
+      })
       this.elTitle = '';
       this.itemText = '';
     },

@@ -65,10 +65,10 @@
       <!-- input -->
       <div class="add-task">
         <label for="todotitle" class="form-label">Inserisci to do titolo</label>
-        <input type="text" class="form-control" id="todotitle" v-model="elTitle" @keyup.enter="addItem" />
+        <input type="text" class="form-control" id="todotitle" v-model="elTitle" @keyup.enter="addItem()" />
         <label for="todotext" class="form-label">Inserisci to do testo</label>
-        <input type="text" class="form-control" id="todotext" v-model="itemText" @keyup.enter="addItem" />
-        <button class="mt-3" @click="addItem">Aggiungi</button>
+        <input type="text" class="form-control" id="todotext" v-model="itemText" @keyup.enter="addItem()" />
+        <button type="button" class="mt-3" @click="addItem()">Aggiungi</button>
     </main>
   </div>
 </body>
