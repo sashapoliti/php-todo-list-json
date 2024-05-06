@@ -1,7 +1,7 @@
 export const toDo = [
     {
         id: 1,
-        title: 'Inhalare tutto ciò che mi capita davanti',
+        title: 'Mangiare tutto ciò che mi capita davanti',
         description: 'Priorità assoluta! Devo assicurarmi di ingoiare ogni cosa che sembri deliziosa o utile durante il mio viaggio.',
         done: false
     },

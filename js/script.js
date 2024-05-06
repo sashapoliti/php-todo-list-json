@@ -6,6 +6,7 @@ createApp({
   data() {
     return {
       toDo,
+      elTitle : '',
       itemText : '',
       done : ''
     };
@@ -26,6 +27,7 @@ createApp({
     addItem() {
       const newItem = {
         id : null,
+        title : this.elTitle,
         description : this.itemText,
         done : false
       };
@@ -34,6 +36,7 @@ createApp({
       }, 0); //reduce for max value
       newItem.id = result + 1;
       this.toDo.push(newItem);
+      this.elTitle = '';
       this.itemText = '';
     }
   },
