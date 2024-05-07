@@ -3,7 +3,28 @@ body {
   font-weight: 400;
   font-style: normal;
   background-color: #fce4ec; /* Rosa pastello */
+}
+
+#app {
+  height: 100vh;
   padding: 20px;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.first-icon, .second-icon {
+  position: absolute;
+  
+}
+
+.first-icon {
+  top: calc(50% - 100px);
+  left: 400px;
+}
+
+.second-icon {
+  top: calc(50% - 168px);
+  right: 200px;
 }
 
 .container {

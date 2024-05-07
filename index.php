@@ -32,6 +32,12 @@
 
 <body>
   <div id="app">
+    <div class="first-icon">
+      <img src="https://i.gifer.com/origin/cd/cd44334923c5a5d94e7cf4ab8f5f2f7f_w200.gif" alt="">
+    </div>
+    <div class="second-icon">
+      <img src="https://64.media.tumblr.com/d031a5cf307d50e0cd027fb37ba53457/tumblr_pc11hqvLWD1xwr65fo1_500.gif" alt="">
+    </div>
     <!-- header -->
     <header class="bg-light p-4 d-flex justify-content-between">
       <div class="d-flex align-items-center">
@@ -51,7 +57,7 @@
     </header>
 
     <!-- main -->
-    <main class="container my-4 bg-light">
+    <main class="container my-4">
       <ul class="list-group list-group-flush">
         <li class="list-group-item d-flex justify-content-between" v-for="(item, index) in filteredToDo" :key="item.id">
           <span :class="{'text-decoration-line-through' : item.done}" @click="toggleDone(item.id)">
@@ -64,9 +70,9 @@
 
       <!-- input -->
       <div class="add-task">
-        <label for="todotitle" class="form-label">Inserisci to do titolo</label>
+        <label for="todotitle" class="form-label">Inserisci titolo Task</label>
         <input type="text" class="form-control" id="todotitle" v-model="elTitle" @keyup.enter="addItem()" />
-        <label for="todotext" class="form-label">Inserisci to do testo</label>
+        <label for="todotext" class="form-label">Inserisci descrizione Task</label>
         <input type="text" class="form-control" id="todotext" v-model="itemText" @keyup.enter="addItem()" />
         <button type="button" class="mt-3" @click="addItem()">Aggiungi</button>
     </main>

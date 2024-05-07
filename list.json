@@ -3,19 +3,19 @@
         "id": 1,
         "title": "Mangiare tutto ci\u00f2 che mi capita davanti",
         "description": "Priorit\u00e0 assoluta! Devo assicurarmi di ingoiare ogni cosa che sembri deliziosa o utile durante il mio viaggio.",
-        "done": true
+        "done": false
     },
     {
         "id": 2,
         "title": "Salvare Dream Land (ancora una volta)",
         "description": "Dream Land \u00e8 sempre in pericolo! Devo assicurarmi di sconfiggere tutti i cattivi e proteggere il mio amato mondo rosa.",
-        "done": true
+        "done": false
     },
     {
         "id": 3,
         "title": "Allenarmi con i miei poteri copiati",
         "description": "Devo essere pronto a fronteggiare qualsiasi minaccia! Allenarmi e sperimentare con i poteri che ho assorbito \u00e8 fondamentale.",
-        "done": true
+        "done": false
     },
     {
         "id": 4,

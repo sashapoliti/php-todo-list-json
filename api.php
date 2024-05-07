@@ -4,6 +4,7 @@ $listJson = file_get_contents("list.json");
 
 $method = $_SERVER['REQUEST_METHOD'];
 
+/* with POST add new task */
 if ($method === 'POST') {
     if (isset($_POST['id'])) {
         $list = json_decode($listJson, true);
@@ -19,9 +20,10 @@ if ($method === 'POST') {
         $listJson = json_encode($list, JSON_PRETTY_PRINT);
         file_put_contents('list.json', $listJson);
     }
-} elseif ($method === 'DELETE') {
+} /* with DELETE remove task */ elseif ($method === 'DELETE') {
     $list = json_decode($listJson, true);
 
+    /* filter by ID */
     $obj = json_decode(file_get_contents('php://input'), true);
     foreach ($list as $index => $task) {
         if ($task['id'] === $obj['id']) {
@@ -30,15 +32,17 @@ if ($method === 'POST') {
     }
     $listJson = json_encode($list, JSON_PRETTY_PRINT);
     file_put_contents('list.json', $listJson);
-} elseif ($method === 'PUT') {
+} /* with PUT toggle task done */ elseif ($method === 'PUT') {
     $list = json_decode($listJson, true);
 
+    /* filter by ID */
     $obj = json_decode(file_get_contents('php://input'), true);
     foreach ($list as $index => $task) {
         if ($task['id'] === $obj['id']) {
-            $list[$index]['done'] = !(int) $list[$index]['done'];
+            $list[$index]['done'] = !$list[$index]['done'];
         }
     }
+
     $listJson = json_encode($list, JSON_PRETTY_PRINT);
     file_put_contents('list.json', $listJson);
 }
